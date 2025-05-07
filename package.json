@@ -1,0 +1,16 @@
+{
+  "name": "ebay-template2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass assets/sass/main.scss assets/css/main.css --watch",
+    "compile": "sass assets/sass/main.scss assets/css/main.css"
+  },
+  "keywords": [],
+  "author": "amanda",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.87.0"
+  }
+}

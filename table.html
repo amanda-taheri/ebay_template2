@@ -1,238 +1,160 @@
-<div id="table" class="responsive-table-container">
-    <table class="feature-table">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black &amp; White Table</title>
+<style>
+    :root {
+        --black: #000000; --white: #ffffff; --gray: #f0f0f0; --dark-gray: #333333; --text-dark: #222222; --border-color: #dddddd;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--white); margin: 0; padding: 2rem; line-height: 1.5;
+    }
+    
+    .table-container {
+        max-width: 1000px; margin: 0 auto; overflow-x: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .styled-table {
+        width: 100%; border-collapse: collapse; background-color: var(--white);
+    }
+    
+    /* Header row - black */
+    .styled-table thead tr {
+        background-color: var(--black); color: var(--white);
+    }
+    
+    .styled-table th {
+        padding: 1.2rem 1.5rem; text-align: left; font-weight: 600; font-size: 0.95rem;
+    }
+    
+    /* First column - gray */
+    .styled-table tbody td:first-child {
+        background-color: var(--gray); color: var(--text-dark); font-weight: 500; border-right: 2px solid var(--border-color); width: 30%;
+    }
+    
+    /* All other cells - white */
+    .styled-table tbody td {
+        padding: 1rem 1.5rem; color: var(--text-dark); border-bottom: 2px solid var(--border-color);
+    }
+    
+    .styled-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+    
+    /* Hover effects */
+    .styled-table tbody tr:hover td:first-child {
+        background-color: #e5e5e5;
+    }
+    
+    .styled-table tbody tr:hover td {
+        background-color: #f9f9f9;
+    }
+    
+    /* Improved responsive design */
+    @media (max-width: 768px) {
+        body {
+            padding: 1rem;
+        }
+        
+        .table-container {
+            box-shadow: none;
+        }
+        
+        .styled-table {
+            display: table;
+            width: 100%;
+        }
+        
+        .styled-table thead {
+            display: table-header-group;
+        }
+        
+        .styled-table th {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .styled-table tbody td {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+            display: table-cell;
+            width: auto;
+        }
+        
+        .styled-table tbody td:first-child {
+            width: 40%;
+            font-weight: 500;
+            background-color: var(--gray);
+            border-right: 2px solid var(--border-color);
+        }
+        
+        /* Remove the data-label pseudo-elements */
+        .styled-table td::before {
+            content: none;
+        }
+        
+        /* Stacked layout for complex cells */
+        .styled-table td br {
+            display: block;
+            content: " ";
+            margin: 0.5rem 0;
+        }
+    }
+
+    /* For very small screens */
+    @media (max-width: 480px) {
+        .styled-table th,
+        .styled-table td {
+            padding: 0.6rem 0.8rem;
+        }
+        
+        .styled-table tbody td:first-child {
+            width: 45%;
+        }
+    }
+</style>
+
+<div class="table-container">
+    <table class="styled-table">
         <thead>
             <tr>
-                <th>FEATURE</th>
-                <th>DETAILS</th>
+                <th>Feature</th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="feature-key">Make &amp; Model</td>
-                <td class="feature-value">Chrysler Town &amp; Country</td>
+                <td>Make &amp; Model</td>
+                <td>Chrysler Town &amp; Country</td>
             </tr>
             <tr>
-                <td class="feature-key">Submodel</td>
-                <td class="feature-value">Base, L, Limited, Touring, Premium, Sport, Platinum, Mini, Li, S</td>
+                <td>Submodel</td>
+                <td>Base, L, Limited, Touring, Premium, Sport, Platinum</td>
             </tr>
             <tr>
-                <td class="feature-key">Years Fitted</td>
-                <td class="feature-value">2008-2016 (All Years)</td>
+                <td>Years Fitted</td>
+                <td>2008-2016 (All Years)</td>
             </tr>
             <tr>
-                <td class="feature-key">Placement</td>
-                <td class="feature-value">Front Passenger Bottom</td>
+                <td>Placement</td>
+                <td>Front Passenger Bottom</td>
             </tr>
             <tr>
-                <td class="feature-key">Material</td>
-                <td class="feature-value">Synthetic Leather</td>
+                <td>Material</td>
+                <td>Synthetic Leather</td>
             </tr>
             <tr>
-                <td class="feature-key">Color</td>
-                <td class="feature-value">Black - Original Factory Color</td>
+                <td>Color</td>
+                <td>Black - Original Factory Color</td>
             </tr>
             <tr>
-                <td class="feature-key">Trim Code</td>
-                <td class="feature-value">MLX1 or TLX1 - Located on Door Jamb/Glove Compartment</td>
+                <td>Trim Code</td>
+                <td>MLX1 or TLX1 - Located on Door Jamb/Glove Compartment</td>
             </tr>
             <tr>
-                <td class="feature-key">Compatibility</td>
-                <td class="feature-value">Fits Heated &amp; Non-Heated Seats
-                    <br>Fits Power &amp; Manual Seats</td>
+                <td>Compatibility</td>
+                <td>Fits Heated &amp; Non-Heated Seats<br>Fits Power &amp; Manual Seats</td>
             </tr>
         </tbody>
     </table>
 </div>
-
-<style>
-   :root {
-    --black: #000000;
-    --white: #ffffff;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #333333;
-    --text-gray: #555555;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: #222222; /* Darker border color */
-    --feature-bg: #f0f0f0; /* Slightly darker background for feature column */
-}
-
-.responsive-table-container {
-    padding: 3rem 2rem;
-    background-color: var(--white);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.feature-table {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse; /* Changed from separate to collapse for better border control */
-    border-spacing: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px var(--shadow-color);
-    font-size: 1.6rem;
-    border: 2px solid var(--border-color);
-}
-
-.feature-table thead {
-    background: var(--black);
-    color: var(--white);
-    text-transform: uppercase;
-}
-
-.feature-table th {
-    padding: 1.8rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    font-size: 1.7rem;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.feature-table tbody tr {
-    transition: all 0.3s ease;
-    border-bottom: 1px solid var(--border-color); /* Border for all rows */
-}
-
-.feature-table tbody tr:last-child {
-    border-bottom: 1px solid var(--border-color); /* Keep border for last row too */
-}
-
-.feature-table tbody tr:nth-child(even) {
-    background-color: var(--light-gray);
-}
-
-.feature-table tbody tr:nth-child(odd) {
-    background-color: var(--white);
-}
-
-.feature-table tbody tr:hover {
-    background-color: var(--medium-gray);
-}
-
-.feature-key {
-    padding: 1.6rem 2rem;
-    font-weight: 600;
-    color: var(--black);
-    width: 35%;
-    vertical-align: top;
-    border-right: 2px solid var(--border-color);
-    background-color: var(--feature-bg);
-}
-
-.feature-value {
-    padding: 1.6rem 2rem;
-    color: var(--text-gray);
-    line-height: 1.6;
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 768px) {
-    .responsive-table-container {
-        padding: 2rem 1rem;
-    }
-    .feature-table {
-        font-size: 1.5rem;
-    }
-    .feature-table th {
-        padding: 1.4rem 1.6rem;
-        font-size: 1.6rem;
-    }
-    .feature-key,
-    .feature-value {
-        padding: 1.2rem 1.6rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .feature-table {
-        display: block;
-        border: none;
-    }
-    .feature-table thead {
-        display: none;
-    }
-    .feature-table tbody,
-    .feature-table tr,
-    .feature-table td {
-        display: block;
-        width: 100%;
-    }
-    .feature-table tr {
-        margin-bottom: 1.5rem;
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px var(--shadow-color);
-        border: 1px solid var(--border-color);
-    }
-    .feature-key {
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid var(--border-color);
-        background-color: var(--feature-bg);
-        font-size: 1.5rem;
-        padding: 1rem 1.4rem;
-    }
-    .feature-value {
-        padding: 1rem 1.4rem 1.4rem;
-    }
-    .feature-table tbody tr:nth-child(even),
-    .feature-table tbody tr:nth-child(odd) {
-        background-color: var(--white);
-    }
-    .feature-table tbody tr:last-child {
-        margin-bottom: 0; /* Remove extra margin from last row in mobile */
-    }
-}
-
-/* Animation for table rows */
-@keyframes fadeInRow {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.feature-table tbody tr {
-    animation: fadeInRow 0.5s ease forwards;
-}
-
-.feature-table tbody tr:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.feature-table tbody tr:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.feature-table tbody tr:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.feature-table tbody tr:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.feature-table tbody tr:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.feature-table tbody tr:nth-child(6) {
-    animation-delay: 0.6s;
-}
-
-.feature-table tbody tr:nth-child(7) {
-    animation-delay: 0.7s;
-}
-
-.feature-table tbody tr:nth-child(8) {
-    animation-delay: 0.8s;
-}
-</style>

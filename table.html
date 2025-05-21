@@ -1,0 +1,238 @@
+<div id="table" class="responsive-table-container">
+    <table class="feature-table">
+        <thead>
+            <tr>
+                <th>FEATURE</th>
+                <th>DETAILS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="feature-key">Make &amp; Model</td>
+                <td class="feature-value">Chrysler Town &amp; Country</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Submodel</td>
+                <td class="feature-value">Base, L, Limited, Touring, Premium, Sport, Platinum, Mini, Li, S</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Years Fitted</td>
+                <td class="feature-value">2008-2016 (All Years)</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Placement</td>
+                <td class="feature-value">Front Passenger Bottom</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Material</td>
+                <td class="feature-value">Synthetic Leather</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Color</td>
+                <td class="feature-value">Black - Original Factory Color</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Trim Code</td>
+                <td class="feature-value">MLX1 or TLX1 - Located on Door Jamb/Glove Compartment</td>
+            </tr>
+            <tr>
+                <td class="feature-key">Compatibility</td>
+                <td class="feature-value">Fits Heated &amp; Non-Heated Seats
+                    <br>Fits Power &amp; Manual Seats</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+   :root {
+    --black: #000000;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #333333;
+    --text-gray: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #222222; /* Darker border color */
+    --feature-bg: #f0f0f0; /* Slightly darker background for feature column */
+}
+
+.responsive-table-container {
+    padding: 3rem 2rem;
+    background-color: var(--white);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.feature-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse; /* Changed from separate to collapse for better border control */
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px var(--shadow-color);
+    font-size: 1.6rem;
+    border: 2px solid var(--border-color);
+}
+
+.feature-table thead {
+    background: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.feature-table th {
+    padding: 1.8rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1.7rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.feature-table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color); /* Border for all rows */
+}
+
+.feature-table tbody tr:last-child {
+    border-bottom: 1px solid var(--border-color); /* Keep border for last row too */
+}
+
+.feature-table tbody tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+.feature-table tbody tr:nth-child(odd) {
+    background-color: var(--white);
+}
+
+.feature-table tbody tr:hover {
+    background-color: var(--medium-gray);
+}
+
+.feature-key {
+    padding: 1.6rem 2rem;
+    font-weight: 600;
+    color: var(--black);
+    width: 35%;
+    vertical-align: top;
+    border-right: 2px solid var(--border-color);
+    background-color: var(--feature-bg);
+}
+
+.feature-value {
+    padding: 1.6rem 2rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .responsive-table-container {
+        padding: 2rem 1rem;
+    }
+    .feature-table {
+        font-size: 1.5rem;
+    }
+    .feature-table th {
+        padding: 1.4rem 1.6rem;
+        font-size: 1.6rem;
+    }
+    .feature-key,
+    .feature-value {
+        padding: 1.2rem 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-table {
+        display: block;
+        border: none;
+    }
+    .feature-table thead {
+        display: none;
+    }
+    .feature-table tbody,
+    .feature-table tr,
+    .feature-table td {
+        display: block;
+        width: 100%;
+    }
+    .feature-table tr {
+        margin-bottom: 1.5rem;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px var(--shadow-color);
+        border: 1px solid var(--border-color);
+    }
+    .feature-key {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        background-color: var(--feature-bg);
+        font-size: 1.5rem;
+        padding: 1rem 1.4rem;
+    }
+    .feature-value {
+        padding: 1rem 1.4rem 1.4rem;
+    }
+    .feature-table tbody tr:nth-child(even),
+    .feature-table tbody tr:nth-child(odd) {
+        background-color: var(--white);
+    }
+    .feature-table tbody tr:last-child {
+        margin-bottom: 0; /* Remove extra margin from last row in mobile */
+    }
+}
+
+/* Animation for table rows */
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-table tbody tr {
+    animation: fadeInRow 0.5s ease forwards;
+}
+
+.feature-table tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.feature-table tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-table tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.feature-table tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.feature-table tbody tr:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.feature-table tbody tr:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.feature-table tbody tr:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.feature-table tbody tr:nth-child(8) {
+    animation-delay: 0.8s;
+}
+</style>
